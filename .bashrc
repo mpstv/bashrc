@@ -16,3 +16,8 @@ alias camera-on='sudo modprobe uvcvideo'
 alias camera-off='sudo modprobe -r uvcvideo'
 
 PS1='\[\e[1;34m\]\w \[\e[1;36m\]$(git branch --show-current 2> /dev/null)\[\033[0m\]> '
+
+# set title
+case "$TERM" in xterm*|rxvt*)
+    PS1="\[\e]0; \w\a\]$PS1"
+esac
